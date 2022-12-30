@@ -1,8 +1,10 @@
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Ex2_1 {
     public static String[] createTextFiles(int n,int seed,int bound){
@@ -26,6 +28,22 @@ public class Ex2_1 {
         return namesOfFiles;
     }
 
+    private static int numLines(String fileName) throws FileNotFoundException {
+        Path path = Paths.get(fileName);
+        int lines = 0;
+        try {
+            lines = (int) Files.lines(path).count();
+        }catch (IOException e) {
+            e.printStackTrace();
+        }
+        return lines;
+    }
+    public static int getNumOfLines(String[] fileNames) throws IOException {
+        int totalNumOfRows = 0;
 
-
+        for(String fileName : fileNames){
+           totalNumOfRows += numLines(fileName);
+        }
+        return totalNumOfRows;
+    }
 }
