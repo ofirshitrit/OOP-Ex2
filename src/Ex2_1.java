@@ -1,7 +1,4 @@
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -27,34 +24,33 @@ public class Ex2_1 {
         return namesOfFiles;
     }
 
-
-
-    private static int numLines(String path) throws FileNotFoundException {
-        File file = new File(path);
-        int lines = 0;
+    private static int comuteNumLines(String fileName) throws FileNotFoundException {
+        File file = new File(fileName);
+        int numOfLines = 0;
         Scanner sc = new Scanner(file);
 
         while (sc.hasNextLine()){
             sc.nextLine();
-            lines++;
+            numOfLines++;
         }
-        return lines;
+        return numOfLines;
     }
-
 
     public static int getNumOfLines(String[] fileNames) throws IOException {
         int totalNumOfRows = 0;
 
         for(String fileName : fileNames){
-           totalNumOfRows += numLines(fileName);
+           totalNumOfRows += comuteNumLines(fileName);
         }
         return totalNumOfRows;
     }
 
-    public int getNumOfLinesThreads(String[] fileNames){
+    public static int getNumOfLinesThreads(String[] fileNames){
         int totalNumOfRows = 0;
         for(String fileName : fileNames){
             NumOfLinesThread numOfLinesThread = new NumOfLinesThread(fileName);
+            numOfLinesThread.run();
+            totalNumOfRows += numOfLinesThread.numOfRows;
         }
 
         return totalNumOfRows;
