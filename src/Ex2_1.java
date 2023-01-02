@@ -49,7 +49,7 @@ public class Ex2_1 {
         int totalNumOfRows = 0;
         for(String fileName : fileNames){
             NumOfLinesThread numOfLinesThread = new NumOfLinesThread(fileName);
-            numOfLinesThread.run();
+            numOfLinesThread.start();
             totalNumOfRows += numOfLinesThread.numOfRows;
         }
 
