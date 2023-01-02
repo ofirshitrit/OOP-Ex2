@@ -4,13 +4,13 @@ import java.util.Scanner;
 
 public class NumOfLinesThread extends Thread {
     String fileName;
-    int numOfRows;
+    int numOfRows = 0;
 
     public NumOfLinesThread(String fileName){
         this.fileName = fileName;
     }
 
-    private static int comuteNumLines(String fileName) throws FileNotFoundException {
+    private int computeNumLines(String fileName) throws FileNotFoundException {
         File file = new File(fileName);
         int numOfLines = 0;
         Scanner sc = new Scanner(file);
@@ -25,7 +25,7 @@ public class NumOfLinesThread extends Thread {
     @Override
     public void run() {
         try {
-           numOfRows = comuteNumLines(fileName);
+           numOfRows += computeNumLines(fileName);
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }

@@ -4,14 +4,13 @@ import java.util.Scanner;
 import java.util.concurrent.Callable;
 
 public class Task implements Callable<Integer>{
-    private int totalNumOfRows = 0;
     String fileName;
 
     public Task(String fileName){
         this.fileName = fileName;
     }
 
-    private static int comuteNumLines(String fileName) throws FileNotFoundException {
+    private static int computeNumLines(String fileName) throws FileNotFoundException {
         File file = new File(fileName);
         int numOfLines = 0;
         Scanner sc = new Scanner(file);
@@ -26,7 +25,7 @@ public class Task implements Callable<Integer>{
     @Override
     public Integer call() throws Exception {
         int totalNumOfRows = 0;
-        totalNumOfRows += comuteNumLines(fileName);
+        totalNumOfRows += computeNumLines(fileName);
         return totalNumOfRows;
     }
 }
