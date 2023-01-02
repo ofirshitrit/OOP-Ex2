@@ -1,6 +1,7 @@
 import java.io.*;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.concurrent.*;
 
 public class Ex2_1 {
     public static String[] createTextFiles(int n,int seed,int bound){
@@ -37,25 +38,47 @@ public class Ex2_1 {
     }
 
     public static int getNumOfLines(String[] fileNames) throws IOException {
-        int totalNumOfRows = 0;
+        int totalNumOfLines = 0;
 
         for(String fileName : fileNames){
-           totalNumOfRows += comuteNumLines(fileName);
+            totalNumOfLines += comuteNumLines(fileName);
         }
-        return totalNumOfRows;
+        return totalNumOfLines;
     }
 
     public static int getNumOfLinesThreads(String[] fileNames){
-        int totalNumOfRows = 0;
+        int totalNumOfLines = 0;
         for(String fileName : fileNames){
             NumOfLinesThread numOfLinesThread = new NumOfLinesThread(fileName);
             numOfLinesThread.start();
-            totalNumOfRows += numOfLinesThread.numOfRows;
+            totalNumOfLines += numOfLinesThread.numOfRows;
         }
 
-        return totalNumOfRows;
+        return totalNumOfLines;
 
     }
+    
+    public int getNumOfLinesThreaPool(String[] fileNames) throws ExecutionException, InterruptedException {
+        int totalNumOfLines = 0;
+
+        for (String fileName : fileNames){
+            Callable<Integer> task = new Task(fileName);
+            ExecutorService executorService = Executors.newFixedThreadPool(fileNames.length);
+            Future<Integer> numOfLines = executorService.submit(task);
+            totalNumOfLines
+            System.out.println("Process returned output "  +  numOfLines.get() + " for the input " + fileName);
+            executorService.shutdown();
+        }
+        
+        return totalNumOfLines;
+    }
+
 }
+
+    
+
+
+
+//}
 
 
