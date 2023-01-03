@@ -11,8 +11,9 @@ public class Ex2_1 {
                 String nameFile = "file_" + (i+1);
                 namesOfFiles[i] = nameFile;
                 FileWriter myWriter = new FileWriter(nameFile);
-                Random rand = new Random(seed); // TODO - make help function
+                Random rand = new Random(2); // TODO - make help function
                 int numOfRows = rand.nextInt(bound);
+
                 for (int j = 1; j <= numOfRows ; j++) {
                     myWriter.write("Hello World!\n"); // TODO - what to write?
                 }
@@ -58,13 +59,13 @@ public class Ex2_1 {
 
     public static int getNumOfLinesThreadPool(String[] fileNames) throws ExecutionException, InterruptedException {
         int totalNumOfLines = 0;
+            ExecutorService executorService = Executors.newFixedThreadPool(fileNames.length);
         for (String fileName : fileNames){
             Callable<Integer> task = new NumOfLinesCallable(fileName);
-            ExecutorService executorService = Executors.newFixedThreadPool(fileNames.length);
             Future<Integer> numOfLines = executorService.submit(task);
             totalNumOfLines += numOfLines.get();
-            executorService.shutdown();
         }
+            executorService.shutdown();
         return totalNumOfLines;
     }
 
