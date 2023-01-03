@@ -7,6 +7,7 @@ public class NumOfLinesThread extends Thread {
     int numOfRows = 0;
 
     public NumOfLinesThread(String fileName){
+
         this.fileName = fileName;
     }
 

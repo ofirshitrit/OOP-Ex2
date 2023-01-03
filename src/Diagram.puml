@@ -1,0 +1,33 @@
+@startuml
+Ex2_1 --> "1" NumOfLinesThread
+Ex2_1 --> "1" NumOfLinesCallable
+Thread <|-- NumOfLinesThread
+
+class Ex2_1{
+    + {static} String[] createTextFiles(int n,int seed,int bound)
+      + {static} int getNumOfLines(String[] fileNames)
+      + {static} int getNumOfLinesThreads(String[] fileNames)
+    + {static} int getNumOfLinesThreadPool(String[] fileNames)
+    - {static} int computeNumLines(String fileName)
+}
+
+
+class NumOfLinesCallable{
+    String filename
+    + NumOfLinesCallable(String fileName)
+     + Integer call()
+    - static int computeNumLines(String fileName)
+}
+
+class NumOfLinesThread {
+  String filename
+  int numOfRows
+
+ +NumOfLinesThread(String fileName)
+ +void run()
+ -int computeNumLines(String fileName)
+}
+
+
+
+@enduml

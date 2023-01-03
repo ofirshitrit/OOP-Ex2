@@ -25,7 +25,7 @@ public class Ex2_1 {
         return namesOfFiles;
     }
 
-    private static int comuteNumLines(String fileName) throws FileNotFoundException {
+    private static int computeNumLines(String fileName) throws FileNotFoundException {
         File file = new File(fileName);
         int numOfLines = 0;
         Scanner sc = new Scanner(file);
@@ -41,28 +41,25 @@ public class Ex2_1 {
         int totalNumOfLines = 0;
 
         for(String fileName : fileNames){
-            totalNumOfLines += comuteNumLines(fileName);
+            totalNumOfLines += computeNumLines(fileName);
         }
         return totalNumOfLines;
     }
 
-    public static int getNumOfLinesThreads(String[] fileNames){
+    public static int getNumOfLinesThreads(String[] fileNames) {
         int totalNumOfLines = 0;
-        for(String fileName : fileNames){
+        for (String fileName : fileNames) {
             NumOfLinesThread numOfLinesThread = new NumOfLinesThread(fileName);
             numOfLinesThread.run();
             totalNumOfLines += numOfLinesThread.numOfRows;
         }
-
         return totalNumOfLines;
-
     }
-    
+
     public static int getNumOfLinesThreadPool(String[] fileNames) throws ExecutionException, InterruptedException {
         int totalNumOfLines = 0;
-
         for (String fileName : fileNames){
-            Callable<Integer> task = new Task(fileName);
+            Callable<Integer> task = new NumOfLinesCallable(fileName);
             ExecutorService executorService = Executors.newFixedThreadPool(fileNames.length);
             Future<Integer> numOfLines = executorService.submit(task);
             totalNumOfLines += numOfLines.get();
