@@ -1,14 +1,19 @@
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.concurrent.ExecutionException;
 
 public class Main {
-
+    public static void deleteFiles(String[] fileNames) {
+        File file;
+        for (int i = 1; i <= fileNames.length; i++) {
+            file = new File(fileNames[i-1]);
+            file.delete();
+        }
+    }
     public static void main(String[] args) throws IOException, ExecutionException, InterruptedException {
 
-        String[] names = Ex2_1.createTextFiles(1000,3,1000);
+        String[] names = Ex2_1.createTextFiles(1000,3,20);
         System.out.println(Arrays.toString(names));
         //1
         long start1 = System.currentTimeMillis();
@@ -31,7 +36,7 @@ public class Main {
         long end3 = System.currentTimeMillis();
         System.out.println("function3 takes " + (end3 - start3)*0.001+"Seconds");
 
-
+        deleteFiles(names);
 
 
 

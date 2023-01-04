@@ -10,10 +10,10 @@ public class Ex2_1 {
         String[] namesOfFiles = new String[n];
         try {
             for (int i = 0; i < n; i++) {
-                String nameFile = "files\\file_" + (i+1);
+                String nameFile = "file_" + (i+1);
                 namesOfFiles[i] = nameFile;
                 FileWriter myWriter = new FileWriter(nameFile);
-                Random rand = new Random(2); // TODO - make help function
+                Random rand = new Random(seed); // TODO - make help function
                 int numOfRows = rand.nextInt(bound);
 
                 for (int j = 1; j <= numOfRows ; j++) {
