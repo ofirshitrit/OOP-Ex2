@@ -11,23 +11,33 @@ import java.util.function.Supplier;
 
 public class CustomExecutor extends ThreadPoolExecutor {
 
-    private PriorityBlockingQueue<Integer> priorityQueue = new PriorityBlockingQueue<>();
+    private PriorityBlockingQueue<Integer> priorityQueue;
     private static final int numOfCores = Runtime.getRuntime().availableProcessors();
     private static final int corePoolSize = numOfCores/2;
     private static final int maxPoolSize = numOfCores-1;
+
+    private int MaxPriority = Integer.MIN_VALUE;
     public CustomExecutor(){
         super(corePoolSize,maxPoolSize,300L ,TimeUnit.MILLISECONDS,new PriorityBlockingQueue<>());
+        priorityQueue = new PriorityBlockingQueue<>();
+    }
+    public void gracefullyTerminate()
+    { //11
 
     }
-    public void gracefullyTerminate() {
+
+    public int getCurrentMax() {
+        return MaxPriority;
     }
 
-//    public String getCurrentMax() {
-//    }
 
-
-    public Task submit(Task task){
-        return null; //add to queue
+    public Type submit(Task task){
+        int currPriority = task.getTaskType().getPriorityValue();
+        priorityQueue.add(currPriority);
+        if (MaxPriority < currPriority){
+            MaxPriority = currPriority;
+        }
+        return null; // TODO
     }
     public Task submit(Supplier<Type> supplier , TaskType taskType) {
         return null;
@@ -35,4 +45,5 @@ public class CustomExecutor extends ThreadPoolExecutor {
     public Task submit(Supplier<Type> supplier){
         return null;
     }
+
 }

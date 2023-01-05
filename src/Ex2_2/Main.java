@@ -9,11 +9,14 @@ public class Main {
 
         PriorityBlockingQueue<Integer> q = new PriorityBlockingQueue<>();
         q.add(20);
+        System.out.println(q);
         q.add(10);
-        q.add(1);
+        System.out.println(q);
+        q.add(7);
+        System.out.println(q);
         q.add(0);
+        System.out.println(q);
         q.add(300);
-
         System.out.println(q);
 //        Task<Integer> task = new Task<>();
 //        int res = task.Test((Integer x) -> x+1, 5);

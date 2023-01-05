@@ -2,24 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="951f6652-ff6a-479a-9b8f-c6ecb5fb46b9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Ex2_2/CustomExecutor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Ex2_2/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Ex2_2/Task.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Ex2_2/TaskFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Ex2_2/TaskType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Ex2_2/Tests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ex2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Ex2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ex2/Diagram.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ex2/Ex2_1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ex2/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ex2/NumOfLinesCallable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ex2/NumOfLinesThread.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Diagram.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex2_1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NumOfLinesCallable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NumOfLinesThread.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ex2_2/CustomExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ex2_2/CustomExecutor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ex2_2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ex2_2/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
