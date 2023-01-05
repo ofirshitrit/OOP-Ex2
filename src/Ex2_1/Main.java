@@ -1,3 +1,4 @@
+package Ex2_1;
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
@@ -8,11 +9,11 @@ public class Main {
         File file;
         for (int i = 1; i <= fileNames.length; i++) {
             file = new File(fileNames[i-1]);
-            file.delete();
+            file.delete(); //TODO
         }
     }
     public static void main(String[] args) throws IOException, ExecutionException, InterruptedException {
-
+    //TODO make tests
         String[] names = Ex2_1.createTextFiles(1000,3,20);
         System.out.println(Arrays.toString(names));
         //1
