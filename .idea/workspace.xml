@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="951f6652-ff6a-479a-9b8f-c6ecb5fb46b9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Ex2_2/PriorityFutureTaskWrapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Ex2/Ex2_2/CustomExecutor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ex2/Ex2_2/CustomExecutor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ex2/Ex2_2/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ex2/Ex2_2/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Ex2/Ex2_2/Task.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ex2/Ex2_2/Task.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ex2/Ex2_2/TaskFunction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Ex2/Ex2_2/Tests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ex2/Ex2_2/Tests.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Ex2_2/CustomExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ex2_2/CustomExecutor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex2_2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ex2_2/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Ex2_2/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ex2_2/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex2_2/TaskFunction.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Ex2_2/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ex2_2/Tests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -135,5 +131,16 @@
       <updated>1672815797491</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Ex2_2/Tests.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -19,6 +19,7 @@ public class Tests {
             for (int i = 1; i <= 10; i++) {
                 sum += i;
             }
+            System.out.println("Done");
             return sum;
         }, TaskType.COMPUTATIONAL);
         var sumTask = customExecutor.submit(task);
@@ -51,8 +52,8 @@ public class Tests {
         }
         logger.info(()-> "Reversed String = " + reversed);
         logger.info(()->String.valueOf("Total Price = " + totalPrice));
-//        logger.info(()-> "Current maximum priority = " +customExecutor.getCurrentMax());
-//        customExecutor.gracefullyTerminate();
+        logger.info(()-> "Current maximum priority = " +customExecutor.getCurrentMax());
+        customExecutor.gracefullyTerminate();
     }
 }
 

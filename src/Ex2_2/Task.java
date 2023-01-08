@@ -18,7 +18,7 @@ public class Task<V>  implements Callable<V>{
 
     @Override
     public V call() throws Exception {
-        return null;
+        return callable.call();
     }
 
     Callable<V> getCallable() {
