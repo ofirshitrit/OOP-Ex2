@@ -2,13 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="951f6652-ff6a-479a-9b8f-c6ecb5fb46b9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Ex2_2/PriorityFutureTaskWrapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Ex2/Ex2_2/CustomExecutor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ex2/Ex2_2/CustomExecutor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Ex2/Ex2_2/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ex2/Ex2_2/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Ex2/Ex2_2/Task.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ex2/Ex2_2/Task.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Ex2/Ex2_2/TaskFunction.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Ex2_2/CustomExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ex2_2/CustomExecutor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Ex2_2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ex2_2/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Ex2_2/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ex2_2/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ex2_2/TaskFunction.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Ex2_2/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ex2_2/Tests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -50,7 +53,7 @@
     "last_opened_file_path": "C:/Users/Ofir/IdeaProjects/MainForMe"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.Ex2_2.Main">
+  <component name="RunManager" selected="TestNG.Tests.partialTest">
     <configuration name="Ex2_1.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Ex2_1.Main" />
       <module name="Ex2" />
@@ -95,8 +98,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Tests.partialTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Ex2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Ex2_2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Ex2_2" />
+      <option name="MAIN_CLASS_NAME" value="Ex2_2.Tests" />
+      <option name="METHOD_NAME" value="partialTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.Tests.partialTest" />
         <item itemvalue="Application.Ex2_2.Main" />
         <item itemvalue="Application.Ex2_1.Main" />
         <item itemvalue="Application.Main" />

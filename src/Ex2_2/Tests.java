@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 
 
 public class Tests {
-    public static final Logger logger = LoggerFactory.getLogger(Tests.class);
+    public static final Logger logger = Logger.getLogger(Tests.class.getName());
     @Test
     public void partialTest(){
         CustomExecutor customExecutor = new CustomExecutor();
@@ -51,8 +51,8 @@ public class Tests {
         }
         logger.info(()-> "Reversed String = " + reversed);
         logger.info(()->String.valueOf("Total Price = " + totalPrice));
-        logger.info(()-> "Current maximum priority = " +customExecutor.getCurrentMax());
-        customExecutor.gracefullyTerminate();
+//        logger.info(()-> "Current maximum priority = " +customExecutor.getCurrentMax());
+//        customExecutor.gracefullyTerminate();
     }
 }
 

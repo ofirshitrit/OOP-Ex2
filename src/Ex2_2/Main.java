@@ -9,9 +9,6 @@ public class Main {
 
     public static void main(String[] args)
     {
-
-
-//        System.out.println(TaskType.COMPUTATIONAL);
 //        Task<Integer> task = new Task<>();
 //        int res = task.Test((Integer x) -> x+1, 5);
 //        System.out.println(res); //6

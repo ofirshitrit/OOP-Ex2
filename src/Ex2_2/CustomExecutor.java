@@ -1,49 +1,35 @@
 package Ex2_2;
 
-import java.lang.reflect.Type;
+
 import java.util.concurrent.*;
-import java.util.function.Supplier;
 
 public class CustomExecutor {
-
-    private PriorityBlockingQueue<Task> priorityQueue;
-
-    private static final int numOfCores = Runtime.getRuntime().availableProcessors();
-    private ThreadPoolExecutor pool;
-    private static final int corePoolSize = numOfCores/2;
-    private static final int maxPoolSize = numOfCores-1;
-
-    private int MaxPriority = Integer.MIN_VALUE;
+   // private ExecutorService executor = Executors.newFixedThreadPool(4);
+    PriorityBlockingQueue<Runnable> pq = new PriorityBlockingQueue<>();
+    ThreadPoolExecutor pool;
+    int poolSize = 1;
+    int MaxPoolSize = 3;
     public CustomExecutor(){
-        this.pool = new ThreadPoolExecutor(corePoolSize,maxPoolSize,300L ,TimeUnit.MILLISECONDS,new PriorityBlockingQueue<>());
-        priorityQueue = new PriorityBlockingQueue<>(); //TODO - not the same queue beacuse it need to be runnable
+        pool = new ThreadPoolExecutor(poolSize,MaxPoolSize,300L ,TimeUnit.MILLISECONDS,pq){
+            @Override
+            protected <V> RunnableFuture<V> newTaskFor(Callable<V> c) {
+                return new PriorityFutureTaskWrapper<>((Task<V>) c);
+            }
+        };
     }
-    public void gracefullyTerminate()
-    { //11
-
-    }
-
-    public int getCurrentMax() {
-        return MaxPriority;
-    }
-
-
-    public Future submit(Task task){
-        return null; // TODO
-
-//        int currPriority = task.getTaskType().getPriorityValue();
-//        priorityQueue.add(currPriority);
-//        if (MaxPriority < currPriority){
-//            MaxPriority = currPriority;
-//        }
-    }
-    public Task submit(Callable<?> callable , TaskType taskType)
-    { //TODO
-        return null;
-    }
-    public Task submit(Callable<?> callable)
-    { //TODO
-        return null;
+    public <V> Future<V> submit(Task<V> task) {
+        return pool.submit(task);
     }
 
+    public <V> Future<V> submit(Callable<V> callable, TaskType type) {
+        return pool.submit(callable);
+    }
+
+    public Integer getCurrentMax() {
+        return 0;
+    }
+
+    public void gracefullyTerminate() {
+
+    }
 }
