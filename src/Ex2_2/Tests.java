@@ -19,7 +19,6 @@ public class Tests {
             for (int i = 1; i <= 10; i++) {
                 sum += i;
             }
-            System.out.println("Done");
             return sum;
         }, TaskType.COMPUTATIONAL);
         var sumTask = customExecutor.submit(task);

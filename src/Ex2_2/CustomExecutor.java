@@ -21,22 +21,26 @@ public class CustomExecutor {
         };
     }
     public <V> Future<V> submit(Task<V> task) {
+        if (maxPriority < task.type.getPriorityValue()){
+            maxPriority = task.type.getPriorityValue();
+        }
         return pool.submit(task);
     }
 
     public <V> Future<V> submit(Callable<V> callable)  {
        //return pool.submit(new Task<>(callable,TaskType.COMPUTATIONAL));
-       return submit(new Task<>(callable,TaskType.OTHER));
+        return submit(Task.createTask(callable));
     }
 
     public <V> Future<V> submit(Callable<V> callable, TaskType type) {
-        //return pool.submit(new Task<>(callable,type));
-        return submit(new Task<>(callable,type));
+       // return pool.submit(new Task<>(callable,type));
+        return submit(Task.createTask(callable,type));
     }
 
 //    public int comparePriority(Task<V> task1 , Task<V> task1)
 
     public Integer getCurrentMax() {
+
         return maxPriority;
     }
 

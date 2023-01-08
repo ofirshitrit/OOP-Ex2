@@ -4,6 +4,9 @@
     <list default="true" id="951f6652-ff6a-479a-9b8f-c6ecb5fb46b9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Ex2_2/CustomExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ex2_2/CustomExecutor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ex2_2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ex2_2/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ex2_2/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ex2_2/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ex2_2/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ex2_2/Tests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,18 +36,18 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/Ofir/IdeaProjects/MainForMe"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Ofir/IdeaProjects/MainForMe&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="TestNG.Tests.partialTest">
+}</component>
+  <component name="RunManager" selected="Application.Ex2_2.Main">
     <configuration name="Ex2_1.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Ex2_1.Main" />
       <module name="Ex2" />
@@ -109,8 +112,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.Tests.partialTest" />
         <item itemvalue="Application.Ex2_2.Main" />
+        <item itemvalue="TestNG.Tests.partialTest" />
         <item itemvalue="Application.Ex2_1.Main" />
         <item itemvalue="Application.Main" />
       </list>
@@ -131,9 +134,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Ex2_2/Tests.java</url>
-          <line>17</line>
-          <option name="timeStamp" value="9" />
+          <url>file://$PROJECT_DIR$/src/Ex2_2/Main.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
