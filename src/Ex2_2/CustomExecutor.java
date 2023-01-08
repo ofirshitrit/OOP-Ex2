@@ -8,7 +8,7 @@ public class CustomExecutor {
     PriorityBlockingQueue<Runnable> pq = new PriorityBlockingQueue<>();
     ThreadPoolExecutor pool;
 
-    int maxPriority = Integer.MIN_VALUE;
+    int maxPriority = Integer.MAX_VALUE;
 
     public CustomExecutor(){
         int coreSize = (Runtime.getRuntime().availableProcessors())/2;
@@ -21,7 +21,7 @@ public class CustomExecutor {
         };
     }
     public <V> Future<V> submit(Task<V> task) {
-        if (maxPriority < task.type.getPriorityValue()){
+        if (maxPriority > task.type.getPriorityValue()){
             maxPriority = task.type.getPriorityValue();
         }
         return pool.submit(task);
@@ -38,6 +38,10 @@ public class CustomExecutor {
     }
 
 //    public int comparePriority(Task<V> task1 , Task<V> task1)
+
+    public void shutDown(){
+        pool.shutdown();
+    }
 
     public Integer getCurrentMax() {
 

@@ -47,13 +47,15 @@ public class Main {
         executor.submit(t1);
         executor.submit(t2);
         executor.submit(t3);
+        executor.shutDown();
 
+        System.out.println(executor.maxPriority);
 
-
-        for (PriorityFutureTaskWrapper<?> wrapper : queue) {
-            Task<?> task = wrapper.getPriorityTask();
-            System.out.println(task); // print the task
-        }
+//
+//        for (PriorityFutureTaskWrapper<?> wrapper : queue) {
+//            Task<?> task = wrapper.getPriorityTask();
+//            System.out.println(task); // print the task
+//        }
 
     }
 
