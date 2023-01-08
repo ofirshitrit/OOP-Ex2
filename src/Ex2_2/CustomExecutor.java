@@ -7,9 +7,12 @@ public class CustomExecutor {
    // private ExecutorService executor = Executors.newFixedThreadPool(4);
     PriorityBlockingQueue<Runnable> pq = new PriorityBlockingQueue<>();
     ThreadPoolExecutor pool;
-    int coreSize = (Runtime.getRuntime().availableProcessors())/2;
-    int maxPoolSize = (Runtime.getRuntime().availableProcessors())-1;
+
+    int maxPriority = Integer.MIN_VALUE;
+
     public CustomExecutor(){
+        int coreSize = (Runtime.getRuntime().availableProcessors())/2;
+        int maxPoolSize = (Runtime.getRuntime().availableProcessors())-1;
         pool = new ThreadPoolExecutor(coreSize,maxPoolSize,300L ,TimeUnit.MILLISECONDS,pq){
             @Override
             protected <V> RunnableFuture<V> newTaskFor(Callable<V> c) {
@@ -23,7 +26,7 @@ public class CustomExecutor {
 
     public <V> Future<V> submit(Callable<V> callable)  {
        //return pool.submit(new Task<>(callable,TaskType.COMPUTATIONAL));
-       return submit(new Task<>(callable,TaskType.COMPUTATIONAL));
+       return submit(new Task<>(callable,TaskType.OTHER));
     }
 
     public <V> Future<V> submit(Callable<V> callable, TaskType type) {
@@ -31,9 +34,10 @@ public class CustomExecutor {
         return submit(new Task<>(callable,type));
     }
 
+//    public int comparePriority(Task<V> task1 , Task<V> task1)
 
     public Integer getCurrentMax() {
-        return 0;
+        return maxPriority;
     }
 
     public void gracefullyTerminate() {
