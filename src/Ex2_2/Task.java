@@ -3,8 +3,8 @@ package Ex2_2;
 import java.util.concurrent.Callable;
 
 public class Task<V> implements Callable<V>{
-    Callable<V> callable;
-    TaskType type;
+    Callable<V> callable;  //TODO MAKE PRIVATE
+    TaskType type; //TODO MAKE PRIVATE
 
     private Task(Callable<V> callable, TaskType type) {
         this.callable =  callable;

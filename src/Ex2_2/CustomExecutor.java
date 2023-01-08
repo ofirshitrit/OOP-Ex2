@@ -5,7 +5,7 @@ import java.util.concurrent.*;
 
 public class CustomExecutor {
    // private ExecutorService executor = Executors.newFixedThreadPool(4);
-    PriorityBlockingQueue<Runnable> pq = new PriorityBlockingQueue<>();
+    PriorityBlockingQueue<Runnable> pq = new PriorityBlockingQueue<>(); //TODO MAKE PRIVATE
     ThreadPoolExecutor pool;
 
     int maxPriority = Integer.MAX_VALUE;
