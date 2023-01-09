@@ -30,24 +30,14 @@ public class Main {
         }, TaskType.OTHER);
 
 
-        PriorityFutureTaskWrapper<Integer> compute = new PriorityFutureTaskWrapper<>(t1);
-        PriorityFutureTaskWrapper<String> IO = new PriorityFutureTaskWrapper<>(t2);
-        PriorityFutureTaskWrapper<Integer> compute2 = new PriorityFutureTaskWrapper<>(t3);
-        PriorityFutureTaskWrapper<Boolean> other = new PriorityFutureTaskWrapper<>(t4);
-
-
         CustomExecutor executor = new CustomExecutor();
-        executor.getPq().add(IO);
-        executor.getPq().add(compute);
-        executor.getPq().add(other);
-        executor.getPq().add(compute2);
 
-        System.out.println(executor.getPq().poll());
-        System.out.println(executor.getPq().poll());
-        System.out.println(executor.getPq().poll());
-        System.out.println(executor.getPq().poll());
+//        System.out.println(executor.getPq().poll());
+//        System.out.println(executor.getPq().poll());
+//        System.out.println(executor.getPq().poll());
+//        System.out.println(executor.getPq().poll());
 
-        System.out.println(t1.compareTo(t3));
+       // System.out.println(t1.compareTo(t3));
 
 
 
