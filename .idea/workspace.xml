@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="951f6652-ff6a-479a-9b8f-c6ecb5fb46b9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex2_2/Diagram2.puml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ex2_2/Diagram2.puml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex2_2/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ex2_2/Tests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ex2_2/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ex2_2/Task.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,23 +35,23 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultPlantUmlFileTemplate": "UML Sequence",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "create.test.in.the.same.root": "true",
-    "last_opened_file_path": "C:/Users/Ofir/IdeaProjects/Ex2",
-    "settings.editor.selected.configurable": "Errors"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultPlantUmlFileTemplate&quot;: &quot;UML Sequence&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Ofir/IdeaProjects/Ex2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -95,6 +94,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Tests.partialTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Ex2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Ex2_2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Ex2_2" />
+      <option name="MAIN_CLASS_NAME" value="Ex2_2.Tests" />
+      <option name="METHOD_NAME" value="partialTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -127,6 +142,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Ex2_2.Main" />
+        <item itemvalue="JUnit.Tests.partialTest" />
         <item itemvalue="Application.Ex2_1.Main" />
         <item itemvalue="TestNG.Tests.partialTest" />
         <item itemvalue="Application.Main" />

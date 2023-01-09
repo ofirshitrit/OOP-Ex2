@@ -47,6 +47,7 @@ public class Main {
         System.out.println(executor.getPq().poll());
         System.out.println(executor.getPq().poll());
 
+        System.out.println(t1.compareTo(t3));
 
 
 

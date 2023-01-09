@@ -1,9 +1,14 @@
 @startuml
 CustomExecutor <-- Ex2_2
+Task <-- Ex2_2
 PriorityFutureTaskWrapper <-- Ex2_2
 TaskType <-- Ex2_2
-Task <-- Ex2_2
 Tests <-- Ex2_2
+Task ..> CustomExecutor
+Task ..> TaskType
+Task ..> PriorityFutureTaskWrapper
+
+
 
 package Ex2_2{
 
@@ -21,8 +26,38 @@ class CustomExecutor {
     + void shutDown()
     + Integer getCurrentMax()
     + void gracefullyTerminate()
-
-
 }
+
+class Task{
+- Callable<V> callable
+- TaskType type
+- Task(Callable<V> callable, TaskType type)
++ static <V> Task<V> createTask(Callable<V> callable, TaskType type)
++ static <V> Task<V> createTask(Callable<V> callable)
++ V call()
++ Callable<V> getCallable()
++ void setCallable(Callable<V> callable)
++ TaskType getType()
++ void setType(TaskType type)
++ String toString()
++ int compareTo(Task<V> o)
+}
+
+
+
+enum TaskType{
+    COMPUTATIONAL
+    IO
+    OTHER
+    - int typePriority;
+}
+
+class PriorityFutureTaskWrapper{
+- Task<V> _priorityTask
++ PriorityFutureTaskWrapper (Task<V> priorityTask)
++ Task<V> getPriorityTask ()
++ String toString()
+}
+
 
 @enduml

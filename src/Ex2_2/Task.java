@@ -2,7 +2,7 @@ package Ex2_2;
 
 import java.util.concurrent.Callable;
 
-public class Task<V> implements Callable<V> , Comparable<Task<V>>{
+public class Task<V> implements Callable<V> , Comparable<Task<V>> {
     private Callable<V> callable;
     private TaskType type;
 
