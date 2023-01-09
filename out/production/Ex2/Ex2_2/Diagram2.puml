@@ -1,0 +1,28 @@
+@startuml
+CustomExecutor <-- Ex2_2
+PriorityFutureTaskWrapper <-- Ex2_2
+TaskType <-- Ex2_2
+Task <-- Ex2_2
+Tests <-- Ex2_2
+
+package Ex2_2{
+
+}
+
+class CustomExecutor {
+
+ - PriorityBlockingQueue<Runnable> pq
+   - ThreadPoolExecutor pool;
+   - int maxPriority
+     + CustomExecutor()
+     + <V> Future<V> submit(Task<V> task)
+     + <V> Future<V> submit(Callable<V> callable)
+    + public <V> Future<V> submit(Callable<V> callable, TaskType type)
+    + void shutDown()
+    + Integer getCurrentMax()
+    + void gracefullyTerminate()
+
+
+}
+
+@enduml

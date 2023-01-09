@@ -20,4 +20,10 @@ class PriorityFutureTaskWrapper<V> extends FutureTask<V>
         return _priorityTask.type.ordinal() -
                 o.getPriorityTask().type.ordinal();
     }
+
+
+    @Override
+    public String toString() {
+        return "Task: " +  _priorityTask;
+    }
 }

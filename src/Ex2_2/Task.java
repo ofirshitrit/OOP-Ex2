@@ -33,7 +33,7 @@ public class Task<V> implements Callable<V>{
 
     @Override
     public String toString() { //TODO CHANGE IT
-        return "The type is " + type;
+        return "The type is " + type + " and it's priority is: " + type.getPriorityValue();
 
     }
 }

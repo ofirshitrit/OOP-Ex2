@@ -3,15 +3,14 @@ package Ex2_2;
 import java.lang.reflect.Type;
 import java.util.PriorityQueue;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.PriorityBlockingQueue;
 
 public class Main {
 
     public static void main(String[] args)
     {
-//        Task<Integer> task = new Task<>();
-////        int res = task.Test((Integer x) -> x+1, 5);
-//////        System.out.println(res); //6
         Task<Integer> t1 = Task.createTask(()->{
             int sum = 0;
             for (int i = 1; i <= 10; i++) {
@@ -33,29 +32,34 @@ public class Main {
             return sum;
         }, TaskType.COMPUTATIONAL);
 
+        Task<Boolean> t4 = Task.createTask(()->{
+            return true;
+        }, TaskType.OTHER);
 
-//        PriorityFutureTaskWrapper<Integer> compute = new PriorityFutureTaskWrapper<>(t1);
-//        PriorityFutureTaskWrapper<String> pq1 = new PriorityFutureTaskWrapper<>(t2);
-//        PriorityFutureTaskWrapper<Integer> compute2 = new PriorityFutureTaskWrapper<>(t3);
 
-//        PriorityQueue<PriorityFutureTaskWrapper<?>> queue = new PriorityQueue<>(); // the priority queue
-//        queue.add(pq1);
-//        queue.add(compute);
-//        queue.add(compute2);
+        PriorityFutureTaskWrapper<Integer> compute = new PriorityFutureTaskWrapper<>(t1);
+        PriorityFutureTaskWrapper<String> IO = new PriorityFutureTaskWrapper<>(t2);
+        PriorityFutureTaskWrapper<Integer> compute2 = new PriorityFutureTaskWrapper<>(t3);
+        PriorityFutureTaskWrapper<Boolean> other = new PriorityFutureTaskWrapper<>(t4);
+
 
         CustomExecutor executor = new CustomExecutor();
-        executor.submit(t1);
-        executor.submit(t2);
-        executor.submit(t3);
-        executor.shutDown();
+        executor.pq.add(IO);
+        executor.pq.add(compute);
+        executor.pq.add(other);
+        executor.pq.add(compute2);
 
-        System.out.println(executor.maxPriority);
+        System.out.println(executor.pq.poll());
+        System.out.println(executor.pq.poll());
+        System.out.println(executor.pq.poll());
+        System.out.println(executor.pq.poll());
 
-//
-//        for (PriorityFutureTaskWrapper<?> wrapper : queue) {
-//            Task<?> task = wrapper.getPriorityTask();
-//            System.out.println(task); // print the task
-//        }
+
+
+
+
+
+
 
     }
 
