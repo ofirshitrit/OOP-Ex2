@@ -3,13 +3,14 @@ package Ex2_2;
 import org.junit.jupiter.api.Test;
 import org.junit.platform.commons.logging.LoggerFactory;
 
+import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.logging.Logger;
 
 public class Tests {
-    public static final Logger logger = LoggerFactory.getLogger(Tests.class);
+    public static final Logger logger = Logger.getLogger(Tests.class.getName());
     @Test
     public void partialTest(){
         CustomExecutor customExecutor = new CustomExecutor();
@@ -51,7 +52,6 @@ public class Tests {
         logger.info(()-> "Reversed String = " + reversed);
         logger.info(()->String.valueOf("Total Price = " + totalPrice));
         logger.info(()-> "Current maximum priority = " +
-                OOP COURSE 2O22 ASSIGNMENT 2.2 | PAGE 6
         customExecutor.getCurrentMax());
         customExecutor.gracefullyTerminate();
     }
