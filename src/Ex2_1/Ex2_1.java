@@ -15,11 +15,11 @@ public class Ex2_1 {
                 String nameFile = "file_" + (i+1);
                 namesOfFiles[i] = nameFile;
                 FileWriter myWriter = new FileWriter(nameFile);
-                Random rand = new Random(seed); // TODO - make help function
+                Random rand = new Random(seed);
                 int numOfRows = rand.nextInt(bound);
 
                 for (int j = 1; j <= numOfRows ; j++) {
-                    myWriter.write("Hello World!\n"); // TODO - what to write?
+                    myWriter.write("Hello World!\n");
                 }
                 myWriter.close();
             }
@@ -51,10 +51,9 @@ public class Ex2_1 {
         return totalNumOfLines;
     }
 
-    public static int getNumOfLinesThreads(String[] fileNames) throws InterruptedException {
+    public int getNumOfLinesThreads(String[] fileNames) throws InterruptedException { //TODO NOT STATIC
         NumOfLinesThread[] threads = new NumOfLinesThread[fileNames.length];
         int totalNumOfLines = 0;
-
         for (int i = 0; i < threads.length ; i++) {
             threads[i] = new NumOfLinesThread(fileNames[i]);
         }
@@ -62,7 +61,7 @@ public class Ex2_1 {
             thread.start();
         }
 
-        for (NumOfLinesThread thread : threads) // TODO ASK ROY ON ERROR
+        for (NumOfLinesThread thread : threads)
         {
             thread.join();
         }
@@ -73,7 +72,7 @@ public class Ex2_1 {
         return totalNumOfLines;
     }
 
-    public static int getNumOfLinesThreadPool(String[] fileNames) throws ExecutionException, InterruptedException {
+    public int getNumOfLinesThreadPool(String[] fileNames) throws ExecutionException, InterruptedException { //TODO NOT STATIC
         int totalNumOfLines = 0;
         ExecutorService executorService = Executors.newFixedThreadPool(fileNames.length);
         List<Future<Integer>> numOfLines = new ArrayList<>();

@@ -13,7 +13,6 @@ public class Main {
         }
     }
     public static void main(String[] args) throws IOException, ExecutionException, InterruptedException {
-    //TODO make tests
         String[] names = Ex2_1.createTextFiles(1000,3,20);
         System.out.println(Arrays.toString(names));
         //1
@@ -25,26 +24,20 @@ public class Main {
 
         //2
         long start2 = System.currentTimeMillis();
-        int rows2 = Ex2_1.getNumOfLinesThreads(names);
+        Ex2_1 helper = new Ex2_1();
+        int rows2 = helper.getNumOfLinesThreads(names);
         System.out.println("Num Of Rows: " + rows2);
         long end2 = System.currentTimeMillis();
         System.out.println("function2 takes " + (end2 - start2)*0.001+"Seconds");
 
         //3
         long start3 = System.currentTimeMillis();
-        int rows3 = Ex2_1.getNumOfLinesThreadPool(names);
+        int rows3 = helper.getNumOfLinesThreadPool(names);
         System.out.println("Num Of Rows: " + rows3);
         long end3 = System.currentTimeMillis();
         System.out.println("function3 takes " + (end3 - start3)*0.001+"Seconds");
 
         deleteFiles(names);
-
-
-
-
-
-
-
 
     }
 }

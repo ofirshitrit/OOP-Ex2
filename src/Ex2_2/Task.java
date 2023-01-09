@@ -3,8 +3,8 @@ package Ex2_2;
 import java.util.concurrent.Callable;
 
 public class Task<V> implements Callable<V> , Comparable<Task<V>>{
-    Callable<V> callable;  //TODO MAKE PRIVATE
-    TaskType type; //TODO MAKE PRIVATE
+    private Callable<V> callable;
+    private TaskType type;
 
     private Task(Callable<V> callable, TaskType type) {
         this.callable =  callable;
@@ -24,15 +24,27 @@ public class Task<V> implements Callable<V> , Comparable<Task<V>>{
     public V call() throws Exception {
         return callable.call();
     }
-    Callable<V> getCallable() {
+    public Callable<V> getCallable() {
         return this.callable;
     }
 
+    public void setCallable(Callable<V> callable) {
+        this.callable = callable;
+    }
+
+    public TaskType getType() {
+        return type;
+    }
+
+    public void setType(TaskType type) {
+        this.type = type;
+    }
+
     @Override
-    public String toString() { //TODO CHANGE IT
+    public String toString() {
         return "The type is " + type + " and it's priority is: " + type.getPriorityValue();
     }
-    @Override
+    @Override //TODO
     public int compareTo(Task<V> o) {
         return this.type.ordinal()-o.type.ordinal();
     }

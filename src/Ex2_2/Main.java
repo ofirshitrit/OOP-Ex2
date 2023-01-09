@@ -1,12 +1,5 @@
 package Ex2_2;
 
-import java.lang.reflect.Type;
-import java.util.PriorityQueue;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.PriorityBlockingQueue;
-
 public class Main {
 
     public static void main(String[] args)
@@ -44,15 +37,15 @@ public class Main {
 
 
         CustomExecutor executor = new CustomExecutor();
-        executor.pq.add(IO);
-        executor.pq.add(compute);
-        executor.pq.add(other);
-        executor.pq.add(compute2);
+        executor.getPq().add(IO);
+        executor.getPq().add(compute);
+        executor.getPq().add(other);
+        executor.getPq().add(compute2);
 
-        System.out.println(executor.pq.poll());
-        System.out.println(executor.pq.poll());
-        System.out.println(executor.pq.poll());
-        System.out.println(executor.pq.poll());
+        System.out.println(executor.getPq().poll());
+        System.out.println(executor.getPq().poll());
+        System.out.println(executor.getPq().poll());
+        System.out.println(executor.getPq().poll());
 
 
 

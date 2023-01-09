@@ -21,8 +21,19 @@ class CustomExecutor {
     + void shutDown()
     + Integer getCurrentMax()
     + void gracefullyTerminate()
+}
 
 
+class Task{
+- Callable<V> callable
+- TaskType type
+- Task(Callable<V> callable, TaskType type)
++ static <V> Task<V> createTask(Callable<V> callable, TaskType type)
++ static <V> Task<V> createTask(Callable<V> callable)
++ V call()
++ Callable<V> getCallable()
++ String toString()
++ int compareTo(Task<V> o)
 }
 
 @enduml
