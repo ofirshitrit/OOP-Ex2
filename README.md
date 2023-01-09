@@ -32,7 +32,8 @@ We can see that the thredPool function is the fastier and then the thread functi
 
 ## Part 2
 ![image](https://user-images.githubusercontent.com/117759983/211291038-1bba7acc-35d2-4227-b5f5-0fefa3143c5e.png)
- In a multi-threaded environment, sometimes we need to schedule tasks based on custom criteria instead of just the creation time.
+ 
+In a multi-threaded environment, sometimes we need to schedule tasks based on custom criteria instead of just the creation time.
 In this part we will show how we can achieve this in Java – using a PriorityBlockingQueue.
 
 ### TaskType
@@ -40,5 +41,37 @@ Is a enum that represent the task type and it priority
 ### Task
 The Task class represent a generic task with a task type and a priority.
 This class implements Callable interface. 
-The feilds class are Callable and TaskType.
-To create an instance of Task we use factory method, it is why the constructor is private. 
+#### The feilds class are:
+1.Callable 
+
+2.TaskType
+
+To create an instance of Task we use factory method, it is why the constructor is private. There are two functions of createTask:
+* The first get Callable and TaskType and return a new object of Task.
+* The second get Callable and return a new object of Task. In this function we define the defult TaskType to be the lowest priority- we chose this beacuse if someone give us task without priority it probability means that the task is not importent to him. 
+
+### PriorityFutureTaskWrapper
+PriorityFutureTaskWrapper exstends from FutureTask<V>.
+This class wrapper the task to be FutureTask type.
+### CustomExecutor
+This class is an Executor that asynchronously computes Task instance. 
+#### The feilds class are:
+1.PriorityBlockingQueue
+
+2.TheradPoolExecutor
+
+3.maxPriority 
+
+#### The methods class are:
+constructor****************************
+
+We have 3 function of submit:
+* The first, get Task and return future. In the implemention of the function we call the TheradPoolExecutor to do submit with the task that we get.
+* The second, get Callable and return the first submit function. We send to the first submit the createTask function that gets Callable.
+*  The last, get Callable and TaskType and return the first submit function. We send to the first submit the createTask function that gets Callable and TaskType.
+
+getCurrentMax function return the max priority of the queue.
+gracefullyTerminate function needs to shutDown the TheradPoolExecutor.
+ 
+
+
