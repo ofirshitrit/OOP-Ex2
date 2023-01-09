@@ -32,3 +32,13 @@ We can see that the thredPool function is the fastier and then the thread functi
 
 ## Part 2
 ![image](https://user-images.githubusercontent.com/117759983/211291038-1bba7acc-35d2-4227-b5f5-0fefa3143c5e.png)
+ In a multi-threaded environment, sometimes we need to schedule tasks based on custom criteria instead of just the creation time.
+In this part we will show how we can achieve this in Java – using a PriorityBlockingQueue.
+
+### TaskType
+Is a enum that represent the task type and it priority 
+### Task
+The Task class represent a generic task with a task type and a priority.
+This class implements Callable interface. 
+The feilds class are Callable and TaskType.
+To create an instance of Task we use factory method, it is why the constructor is private. 
