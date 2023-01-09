@@ -2,7 +2,7 @@ package Ex2_2;
 
 import java.util.concurrent.Callable;
 
-public class Task<V> implements Callable<V>{
+public class Task<V> implements Callable<V> , Comparable<Task<V>>{
     Callable<V> callable;  //TODO MAKE PRIVATE
     TaskType type; //TODO MAKE PRIVATE
 
@@ -20,20 +20,20 @@ public class Task<V> implements Callable<V>{
         TaskType defaulteType = TaskType.OTHER;
         return new Task<>(callable, defaulteType);
     }
-
     @Override
     public V call() throws Exception {
         return callable.call();
     }
-
     Callable<V> getCallable() {
         return this.callable;
     }
 
-
     @Override
     public String toString() { //TODO CHANGE IT
         return "The type is " + type + " and it's priority is: " + type.getPriorityValue();
-
+    }
+    @Override
+    public int compareTo(Task<V> o) {
+        return this.type.ordinal()-o.type.ordinal();
     }
 }
