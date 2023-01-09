@@ -29,3 +29,6 @@ In the call function we call the computeNumLines function.
 We check the run time of 1,000 files with number or rows between 3-1,000.
 ![image](https://user-images.githubusercontent.com/117759983/210539096-3fcf3ffb-b87e-4eaf-912f-9c9d291bfa85.png)
 We can see that the thredPool function is the fastier and then the thread function and in the end the function without threads.
+
+## Part 2
+![image](https://user-images.githubusercontent.com/117759983/211291038-1bba7acc-35d2-4227-b5f5-0fefa3143c5e.png)
