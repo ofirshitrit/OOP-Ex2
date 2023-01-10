@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.platform.commons.logging.LoggerFactory;
 
+import java.util.Arrays;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
@@ -64,10 +65,59 @@ public class Tests {
             customExecutor.submit(cTask);
         }
         System.out.println("Done");
-        Thread.sleep(2000);
+//        Thread.sleep(2000);
         customExecutor.gracefullyTerminate();
     }
 
+    @Test
+    public void test3() throws Exception{
+    /*
+     3. check getCurrentMax()
+     */
+        CustomExecutor customExecutor = new CustomExecutor();
+        var task1 = Task.createTask(()->{
+            System.out.println("task1 is done");
+            return 1;
+        }, TaskType.COMPUTATIONAL);
+        var task11 = Task.createTask(()->{
+            System.out.println("task11 is done");
+            return 2;
+        }, TaskType.COMPUTATIONAL);
+        var task2 = Task.createTask(()->{
+            System.out.println("task2 is done");
+            return 3;
+        }, TaskType.IO);
+        var task22 = Task.createTask(()->{
+            System.out.println("task22 is done");
+            return 3;
+        }, TaskType.IO);
+        var task3 = Task.createTask(()->{
+            System.out.println("task3 is done");
+            return 1;
+        }, TaskType.OTHER);
+        var task33 = Task.createTask(()->{
+            System.out.println("task33 is done");
+            return 1;
+        }, TaskType.OTHER);
+
+        customExecutor.submit(task3);
+        System.out.println("MAX: " + Arrays.toString(customExecutor.maxPriority));
+        customExecutor.submit(task33);
+        System.out.println("MAX: " + Arrays.toString(customExecutor.maxPriority));
+        customExecutor.submit(task1);
+        System.out.println("MAX: " + Arrays.toString(customExecutor.maxPriority));
+        customExecutor.submit(task2);
+        System.out.println("MAX: " + Arrays.toString(customExecutor.maxPriority));
+        customExecutor.submit(task11);
+        System.out.println("MAX: " + Arrays.toString(customExecutor.maxPriority));
+        customExecutor.submit(task22);
+        System.out.println("MAX: " + Arrays.toString(customExecutor.maxPriority));
+
+
+
+
+    }
+    @Test
     public void partialTest(){
         CustomExecutor customExecutor = new CustomExecutor();
         var task = Task.createTask(()->{

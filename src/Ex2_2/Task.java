@@ -40,6 +40,10 @@ public class Task<V> implements Callable<V> {
         return submittedTime;
     }
 
+    public void setSubmittedTime(long submittedTime) {
+        this.submittedTime = submittedTime;
+    }
+
     @Override
     public String toString() {
         return "The type is " + type + " and it's priority is: " + type.getPriorityValue();
