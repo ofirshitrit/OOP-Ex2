@@ -46,13 +46,22 @@ This class implements Callable interface.
 
 2.TaskType
 
+3.defult TaskType
+
+4.submitted time
+
+The submitted time feild exsists for save the time that the task was submitted.
+
+#### The methods class are:
+
 To create an instance of Task we use factory method, it is why the constructor is private. There are two functions of createTask:
 * The first get Callable and TaskType and return a new object of Task.
 * The second get Callable and return a new object of Task. In this function we define the defult TaskType to be the lowest priority- we chose this beacuse if someone give us task without priority it probability means that the task is not importent to him. 
 
-### PriorityFutureTaskWrapper
-PriorityFutureTaskWrapper exstends from FutureTask<V>.
+### TaskWrapper
+TaskWrapper exstends from FutureTask<V> and implements Comparable<TaskWrapper<V>>.
 This class wrapper the task to be FutureTask type.
+The method compareTo compares between two tasks by thier priority and by the time that they was submitted.
 ### CustomExecutor
 This class is an Executor that asynchronously computes Task instance. 
 #### The feilds class are:
@@ -63,7 +72,7 @@ This class is an Executor that asynchronously computes Task instance.
 3.maxPriority 
 
 #### The methods class are:
-constructor****************************
+constructor-----------------
 
 We have 3 function of submit:
 * The first, get Task and return future. In the implemention of the function we call the TheradPoolExecutor to do submit with the task that we get.
@@ -71,7 +80,12 @@ We have 3 function of submit:
 *  The last, get Callable and TaskType and return the first submit function. We send to the first submit the createTask function that gets Callable and TaskType.
 
 getCurrentMax function return the max priority of the queue.
-gracefullyTerminate function needs to shutDown the TheradPoolExecutor.
+gracefullyTerminate function needs to:
+1. Do not allow additional tasks to be queued.
+2. Perform all remaining tasks in the queue
+3. Finish all tasks currently in progress in the CustomExecutor threads collection.
+
+
  
 
 
