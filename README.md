@@ -31,7 +31,7 @@ We check the run time of 1,000 files with number or rows between 3-1,000.
 We can see that the thredPool function is the fastier and then the thread function and in the end the function without threads.
 
 ## Part 2
-![image](https://user-images.githubusercontent.com/117759983/211291038-1bba7acc-35d2-4227-b5f5-0fefa3143c5e.png)
+![image](https://user-images.githubusercontent.com/117759983/211515017-4d58ef88-b0a5-4617-81bb-f9914459e24b.png)
  
 In a multi-threaded environment, sometimes we need to schedule tasks based on custom criteria instead of just the creation time.
 In this part we will show how we can achieve this in Java – using a PriorityBlockingQueue.
