@@ -17,7 +17,7 @@ public class CustomExecutor {
     public CustomExecutor() {
         int coreSize = (Runtime.getRuntime().availableProcessors()) / 2;
         int maxPoolSize = (Runtime.getRuntime().availableProcessors()) - 1;
-        pool = new ThreadPoolExecutor(2, 5, 300L, TimeUnit.MILLISECONDS, pq) {  //TODO
+        pool = new ThreadPoolExecutor(coreSize, maxPoolSize, 300L, TimeUnit.MILLISECONDS, pq) {  //TODO
             @Override
             protected <V> RunnableFuture<V> newTaskFor(Callable<V> callable) {
                 // need to return runnable that is also comparable
