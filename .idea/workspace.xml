@@ -3,14 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="951f6652-ff6a-479a-9b8f-c6ecb5fb46b9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ex2/Ex2_2/CustomExecutor$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ex2/Ex2_2/CustomExecutor$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Ex2/Ex2_2/CustomExecutor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ex2/Ex2_2/CustomExecutor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ex2/Ex2_2/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ex2/Ex2_2/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ex2/Ex2_2/Task.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ex2/Ex2_2/Task.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Ex2/Ex2_2/Tests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ex2/Ex2_2/Tests.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Ex2_2/CustomExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ex2_2/CustomExecutor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex2_2/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ex2_2/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex2_2/TaskWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ex2_2/TaskWrapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ex2_2/Diagram2.puml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ex2_2/Diagram2.puml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Ex2_2/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ex2_2/Tests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +64,7 @@
       <recent name="Ex2_2" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Tests.test3">
+  <component name="RunManager" selected="JUnit.Tests.test2">
     <configuration name="Tests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Ex2" />
       <extension name="coverage">
@@ -161,9 +157,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Tests.test2" />
         <item itemvalue="JUnit.Tests.test3" />
         <item itemvalue="JUnit.Tests.test1" />
-        <item itemvalue="JUnit.Tests.test2" />
         <item itemvalue="JUnit.Tests" />
         <item itemvalue="JUnit.Tests.partialTest" />
       </list>

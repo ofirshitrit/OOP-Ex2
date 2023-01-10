@@ -12,7 +12,7 @@ public class CustomExecutor {
 
     private AtomicBoolean isDuringShutdown = new AtomicBoolean(false);
 
-    public int[] maxPriority = new int[10];//TODO - private
+    private int[] maxPriority = new int[10];
 
     public CustomExecutor() {
         int coreSize = (Runtime.getRuntime().availableProcessors()) / 2;
@@ -63,16 +63,17 @@ public class CustomExecutor {
         return 0;
     }
 
-    public void gracefullyTerminate() {
-        // 1. No new tasks can be submitted into Queue
-        isDuringShutdown.set(true);
-        // 2. Wait until all tasks in Queue are done
-        //submit task with lowest priority -> shutdown the pool
+    public void gracefullyTerminate() throws InterruptedException {
+        Thread.sleep(2000);
         Task<Integer> task = Task.createTask(()-> {
             System.out.println("last task");
             pool.shutdown();
             return 0;},TaskType.OTHER);
         submit(task);
+        // 1. No new tasks can be submitted into Queue
+        isDuringShutdown.set(true);
+        // 2. Wait until all tasks in Queue are done
+        //submit task with lowest priority -> shutdown the pool
     }
 
 

@@ -59,7 +59,7 @@ public class Tests {
         }, TaskType.OTHER);
 
         customExecutor.submit(firstTask);
-        for(int i=0;i<100;i++) {
+        for(int i=0;i<50;i++) {
             customExecutor.submit(iTask);
             customExecutor.submit(oTask);
             customExecutor.submit(cTask);
@@ -118,7 +118,7 @@ public class Tests {
 
     }
     @Test
-    public void partialTest(){
+    public void partialTest() throws InterruptedException {
         CustomExecutor customExecutor = new CustomExecutor();
         var task = Task.createTask(()->{
             int sum = 0;

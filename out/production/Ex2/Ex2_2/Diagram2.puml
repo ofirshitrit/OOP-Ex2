@@ -1,12 +1,12 @@
 @startuml
 CustomExecutor <-- Ex2_2
 Task <-- Ex2_2
-PriorityFutureTaskWrapper <-- Ex2_2
+TaskWrapper <-- Ex2_2
 TaskType <-- Ex2_2
 Tests <-- Ex2_2
 Task ..> CustomExecutor
 Task ..> TaskType
-Task ..> PriorityFutureTaskWrapper
+Task ..> TaskWrapper
 
 
 
@@ -15,7 +15,6 @@ package Ex2_2{
 }
 
 class CustomExecutor {
-
  - PriorityBlockingQueue<Runnable> pq
    - ThreadPoolExecutor pool;
    - int maxPriority
@@ -28,7 +27,9 @@ class CustomExecutor {
     + void gracefullyTerminate()
 }
 
-class Task{
+class Task implements Callable{
+- {static} final TaskType DEFAULT_TASK_TYPE = TaskType.OTHER;
+- long submittedTime;
 - Callable<V> callable
 - TaskType type
 - Task(Callable<V> callable, TaskType type)
@@ -36,9 +37,9 @@ class Task{
 + static <V> Task<V> createTask(Callable<V> callable)
 + V call()
 + Callable<V> getCallable()
-+ void setCallable(Callable<V> callable)
++ long getSubmittedTime()
++ void setSubmittedTime(long submittedTime)
 + TaskType getType()
-+ void setType(TaskType type)
 + String toString()
 + int compareTo(Task<V> o)
 }
@@ -52,7 +53,7 @@ enum TaskType{
     - int typePriority;
 }
 
-class PriorityFutureTaskWrapper{
+class TaskWrapper{
 - Task<V> _priorityTask
 + PriorityFutureTaskWrapper (Task<V> priorityTask)
 + Task<V> getPriorityTask ()
