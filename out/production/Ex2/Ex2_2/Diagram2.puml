@@ -17,12 +17,12 @@ package Ex2_2{
 class CustomExecutor {
  - PriorityBlockingQueue<Runnable> pq
    - ThreadPoolExecutor pool;
-   - int maxPriority
-     + CustomExecutor()
+   - AtomicBoolean isDuringShutdown = new AtomicBoolean(false);
+- int[] maxPriority = new int[10];
++ CustomExecutor()
      + <V> Future<V> submit(Task<V> task)
      + <V> Future<V> submit(Callable<V> callable)
     + public <V> Future<V> submit(Callable<V> callable, TaskType type)
-    + void shutDown()
     + Integer getCurrentMax()
     + void gracefullyTerminate()
 }
@@ -41,10 +41,7 @@ class Task implements Callable{
 + void setSubmittedTime(long submittedTime)
 + TaskType getType()
 + String toString()
-+ int compareTo(Task<V> o)
 }
-
-
 
 enum TaskType{
     COMPUTATIONAL
@@ -53,11 +50,12 @@ enum TaskType{
     - int typePriority;
 }
 
-class TaskWrapper{
-- Task<V> _priorityTask
-+ PriorityFutureTaskWrapper (Task<V> priorityTask)
-+ Task<V> getPriorityTask ()
+class TaskWrapper extends FutureTask implements Comparable{
+- Task<V> _Task
++ TaskWrapper (Task<V> priorityTask)
++ Task<V> getTask ()
 + String toString()
++ int compareTo(TaskWrapper<V> other)
 }
 
 

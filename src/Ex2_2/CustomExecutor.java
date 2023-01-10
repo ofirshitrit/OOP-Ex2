@@ -28,12 +28,15 @@ public class CustomExecutor {
             protected void beforeExecute(Thread t, Runnable r) {
                 int runnablePriority = ((TaskWrapper<?>)r).getTask().getType().getPriorityValue();
                 t.setPriority(toThreadPriority(runnablePriority));
-                maxPriority[runnablePriority-1]--;
             }
             private int toThreadPriority(int runnablePriority) {
                 return Thread.MAX_PRIORITY + 1 - runnablePriority;
             }
-
+            @Override
+            protected void afterExecute(Runnable r, Throwable t) {
+                int runnablePriority = ((TaskWrapper<?>)r).getTask().getType().getPriorityValue();
+                maxPriority[runnablePriority-1]--;
+            }
         };
     }
 
@@ -53,8 +56,7 @@ public class CustomExecutor {
         return submit(Task.createTask(callable, type));
     }
 
-    public Integer getCurrentMax() { //TODO
-        //return ((TaskWrapper<?>)pq.peek()).getTask().getType().getPriorityValue();
+    public Integer getCurrentMax() {
         for (int i = 0; i < maxPriority.length; i++) {
             if(maxPriority[i] != 0){
                 return i+1;
@@ -63,17 +65,16 @@ public class CustomExecutor {
         return 0;
     }
 
+
     public void gracefullyTerminate() throws InterruptedException {
+        // 1. Wait until all tasks in Queue are done
         Thread.sleep(2000);
         Task<Integer> task = Task.createTask(()-> {
-            System.out.println("last task");
             pool.shutdown();
             return 0;},TaskType.OTHER);
         submit(task);
-        // 1. No new tasks can be submitted into Queue
+        // 2. No new tasks can be submitted into Queue
         isDuringShutdown.set(true);
-        // 2. Wait until all tasks in Queue are done
-        //submit task with lowest priority -> shutdown the pool
     }
 
 

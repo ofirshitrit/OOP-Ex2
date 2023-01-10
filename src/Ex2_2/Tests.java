@@ -101,21 +101,17 @@ public class Tests {
         }, TaskType.OTHER);
 
         customExecutor.submit(task3);
-        System.out.println("MAX: " + Arrays.toString(customExecutor.maxPriority));
+        System.out.println("MAX: " + customExecutor.getCurrentMax());
         customExecutor.submit(task33);
-        System.out.println("MAX: " + Arrays.toString(customExecutor.maxPriority));
+        System.out.println("MAX: " + customExecutor.getCurrentMax());
         customExecutor.submit(task1);
-        System.out.println("MAX: " + Arrays.toString(customExecutor.maxPriority));
+        System.out.println("MAX: " + customExecutor.getCurrentMax());
         customExecutor.submit(task2);
-        System.out.println("MAX: " + Arrays.toString(customExecutor.maxPriority));
+        System.out.println("MAX: " + customExecutor.getCurrentMax());
         customExecutor.submit(task11);
-        System.out.println("MAX: " + Arrays.toString(customExecutor.maxPriority));
+        System.out.println("MAX: " + customExecutor.getCurrentMax());
         customExecutor.submit(task22);
-        System.out.println("MAX: " + Arrays.toString(customExecutor.maxPriority));
-
-
-
-
+        System.out.println("MAX: " + customExecutor.getCurrentMax());
     }
     @Test
     public void partialTest() throws InterruptedException {
