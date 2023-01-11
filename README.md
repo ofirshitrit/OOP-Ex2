@@ -72,7 +72,7 @@ This class is an Executor that asynchronously computes Task instance.
 3.maxPriority 
 
 #### The methods class are:
-constructor:
+* constructor:
 This code creates a custom thread pool executor using the ThreadPoolExecutor class. The core pool size is set to half the number of available processors and the maximum pool size is set to one less than the number of available processors. The keep-alive time for idle threads is set to 300 milliseconds. The thread pool uses a priority queue (pq) as its work queue.
 
 The newTaskFor method is overridden to return a new task wrapper, which wraps a Task object of type V. The beforeExecute method is overridden to set the priority of the thread according to the priority of the task. The afterExecute method is overridden to decrement the maxPriority array counter for the task.
@@ -86,11 +86,12 @@ We have 3 function of submit:
 * The second, get Callable and return the first submit function. We send to the first submit the createTask function that gets Callable.
 *  The last, get Callable and TaskType and return the first submit function. We send to the first submit the createTask function that gets Callable and TaskType.
 
-getCurrentMax function return the max priority of the queue.
-gracefullyTerminate function needs to:
-1. Do not allow additional tasks to be queued.
-2. Perform all remaining tasks in the queue
-3. Finish all tasks currently in progress in the CustomExecutor threads collection.
+* getCurrentMax function return the max priority of the queue.
+
+* gracefullyTerminate function needs to:
+ 1. Do not allow additional tasks to be queued.
+ 2. Perform all remaining tasks in the queue
+ 3. Finish all tasks currently in progress in the CustomExecutor threads collection.
 
 
  
