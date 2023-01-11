@@ -72,7 +72,14 @@ This class is an Executor that asynchronously computes Task instance.
 3.maxPriority 
 
 #### The methods class are:
-constructor-----------------
+constructor:
+This code creates a custom thread pool executor using the ThreadPoolExecutor class. The core pool size is set to half the number of available processors and the maximum pool size is set to one less than the number of available processors. The keep-alive time for idle threads is set to 300 milliseconds. The thread pool uses a priority queue (pq) as its work queue.
+
+The newTaskFor method is overridden to return a new task wrapper, which wraps a Task object of type V. The beforeExecute method is overridden to set the priority of the thread according to the priority of the task. The afterExecute method is overridden to decrement the maxPriority array counter for the task.
+
+The toThreadPriority method is used to map the runnable's priority value to a thread priority. It maps runnable's priority to thread priority by subtracting it from maximum priority Thread.MAX_PRIORITY+1.
+
+The maxPriority Array is used to keep track of number of runnable in thread pool with same priority.
 
 We have 3 function of submit:
 * The first, get Task and return future. In the implemention of the function we call the TheradPoolExecutor to do submit with the task that we get.
